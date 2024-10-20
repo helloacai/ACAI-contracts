@@ -1,0 +1,347 @@
+{
+  "address": "0xE9FE2bF68D8C6812BEb8A8019143c1ba8281893b",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "AlreadyExists",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "uid",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "executor",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "uid",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "executor",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "cost",
+              "type": "uint32"
+            },
+            {
+              "internalType": "enum CostPer",
+              "name": "costPer",
+              "type": "uint8"
+            },
+            {
+              "internalType": "string",
+              "name": "metadataURI",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "apiurl",
+              "type": "string"
+            },
+            {
+              "internalType": "enum Status",
+              "name": "status",
+              "type": "uint8"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct ACIRecord",
+          "name": "aci",
+          "type": "tuple"
+        }
+      ],
+      "name": "Registered",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "uid",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getACI",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "uid",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "executor",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "cost",
+              "type": "uint32"
+            },
+            {
+              "internalType": "enum CostPer",
+              "name": "costPer",
+              "type": "uint8"
+            },
+            {
+              "internalType": "string",
+              "name": "metadataURI",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "apiurl",
+              "type": "string"
+            },
+            {
+              "internalType": "enum Status",
+              "name": "status",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct ACIRecord",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "executor",
+          "type": "address"
+        },
+        {
+          "internalType": "uint32",
+          "name": "cost",
+          "type": "uint32"
+        },
+        {
+          "internalType": "enum CostPer",
+          "name": "costPer",
+          "type": "uint8"
+        },
+        {
+          "internalType": "string",
+          "name": "metadataURI",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "apiurl",
+          "type": "string"
+        }
+      ],
+      "name": "register",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x98d30d8b1744ffdb383bcf57f5ab8989953b392b5d9cdbb5267dfccc00ad0c2c",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0xBB0F7C96E024f987B490031D22F6D40D0b4Cc7eD",
+    "contractAddress": null,
+    "transactionIndex": 0,
+    "gasUsed": "567815",
+    "logsBloom": "0x00000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000800000000000000000000100000000000000000000000000000000000000000000000000000000000080000000000000000000040000000000000000000000000000000000000000000000000000000000200000000000000000000000000008000000000000000000000000000000006000000000000000000001000000000000000002000000000000100000000000000000000000000000000000000000000000000000400000000000000000100000",
+    "blockHash": "0xc393f13bc785afa9529f5307aae81fee931b092b66b20bc26f71461682538855",
+    "transactionHash": "0x98d30d8b1744ffdb383bcf57f5ab8989953b392b5d9cdbb5267dfccc00ad0c2c",
+    "logs": [
+      {
+        "transactionIndex": 0,
+        "blockNumber": 13355732,
+        "transactionHash": "0x98d30d8b1744ffdb383bcf57f5ab8989953b392b5d9cdbb5267dfccc00ad0c2c",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x000000000000000000000000bb0f7c96e024f987b490031d22f6d40d0b4cc7ed",
+          "0x000000000000000000000000915a2284d28bd93de7d6f31173b981204bb666e6"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000326e9e4c541600000000000000000000000000000000000000000000000000083d746ebc33d83c0000000000000000000000000000000000000000000004522e9d09ad99013efe000000000000000000000000000000000000000000000000080b05d06fdfc23c0000000000000000000000000000000000000000000004522ecf784be55554fe",
+        "logIndex": 0,
+        "blockHash": "0xc393f13bc785afa9529f5307aae81fee931b092b66b20bc26f71461682538855"
+      }
+    ],
+    "blockNumber": 13355732,
+    "cumulativeGasUsed": "567815",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 2,
+  "solcInputHash": "e0c6cdc4749ebfdfc672a8538797d27f",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"AlreadyExists\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"executor\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"executor\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint32\",\"name\":\"cost\",\"type\":\"uint32\"},{\"internalType\":\"enum CostPer\",\"name\":\"costPer\",\"type\":\"uint8\"},{\"internalType\":\"string\",\"name\":\"metadataURI\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"apiurl\",\"type\":\"string\"},{\"internalType\":\"enum Status\",\"name\":\"status\",\"type\":\"uint8\"}],\"indexed\":false,\"internalType\":\"struct ACIRecord\",\"name\":\"aci\",\"type\":\"tuple\"}],\"name\":\"Registered\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"}],\"name\":\"getACI\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"executor\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint32\",\"name\":\"cost\",\"type\":\"uint32\"},{\"internalType\":\"enum CostPer\",\"name\":\"costPer\",\"type\":\"uint8\"},{\"internalType\":\"string\",\"name\":\"metadataURI\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"apiurl\",\"type\":\"string\"},{\"internalType\":\"enum Status\",\"name\":\"status\",\"type\":\"uint8\"}],\"internalType\":\"struct ACIRecord\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"executor\",\"type\":\"address\"},{\"internalType\":\"uint32\",\"name\":\"cost\",\"type\":\"uint32\"},{\"internalType\":\"enum CostPer\",\"name\":\"costPer\",\"type\":\"uint8\"},{\"internalType\":\"string\",\"name\":\"metadataURI\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"apiurl\",\"type\":\"string\"}],\"name\":\"register\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/ACIRegistry.sol\":\"ACIRegistry\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1},\"remappings\":[]},\"sources\":{\"contracts/ACIRegistry.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.7;\\n\\nimport { IACIRegistry } from \\\"./IACIRegistry.sol\\\";\\nimport {CostPer, ACIRecord, Status} from './IACIRegistry.sol';\\n\\ncontract ACIRegistry is IACIRegistry {\\n    error AlreadyExists();\\n\\n    mapping(bytes32 uid => ACIRecord aciRecord) private _registry;\\n\\n\\n    function register(\\n        address executor,\\n        uint32 cost,\\n        CostPer costPer,\\n        string calldata metadataURI,\\n        string calldata apiurl\\n    ) external returns (bytes32) {\\n        ACIRecord memory aciRecord = ACIRecord({\\n            uid: bytes32(0),\\n            executor: executor,\\n            owner: msg.sender,\\n            cost: cost,\\n            costPer: costPer,\\n            metadataURI: metadataURI,\\n            apiurl: apiurl,\\n            status: Status.Active\\n        });\\n\\n        bytes32 uid = _getUID(aciRecord);\\n        if (_registry[uid].uid != bytes32(0)) {\\n            revert AlreadyExists();\\n        }\\n\\n        aciRecord.uid = uid;\\n        _registry[uid] = aciRecord;\\n\\n        emit Registered(uid, msg.sender, aciRecord);\\n\\n        return uid;\\n    }\\n\\n    function getACI(\\n        bytes32 uid\\n    ) external view returns (ACIRecord memory) {\\n        return _registry[uid];\\n    }\\n\\n    function _getUID(ACIRecord memory aciRecord) private pure returns (bytes32) {\\n        return keccak256(abi.encodePacked(aciRecord.apiurl, aciRecord.metadataURI));\\n    }\\n}\\n\",\"keccak256\":\"0x811223d28bd97533dd8045c1364d60ed52fce3cd755fa148fb66e132f9b34f85\",\"license\":\"MIT\"},\"contracts/IACIRegistry.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.7;\\n\\n/// @notice Enum representing the work upon which the total cost is calculated (ie. per Token, per Job, etc.)\\nenum CostPer {\\n    Token,\\n    Job\\n}\\n\\nenum Status {\\n    Active,\\n    Inactive,\\n    Ignored\\n}\\n\\n/// @notice A struct representing a registered ACI\\nstruct ACIRecord {\\n    bytes32 uid;\\n    address executor;\\n    address owner;\\n    uint32 cost;\\n    CostPer costPer;\\n    string metadataURI;\\n    string apiurl;\\n    Status status;\\n    \\n}\\n\\ninterface IACIRegistry {\\n    event Registered(bytes32 indexed uid, address indexed executor, ACIRecord aci);\\n\\n    function register(\\n        address executor,\\n        uint32 cost,\\n        CostPer costPer,\\n        string calldata metadataURI,\\n        string calldata apiurl\\n    ) external returns (bytes32);\\n\\n    function getACI(bytes32 uid) external view returns (ACIRecord memory);\\n}\\n\",\"keccak256\":\"0x97e18c4119019ca35dfad95ec0ac334ac68d46d39b93786b072e0e317747d8cf\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610947806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80636bcdc30c1461003b57806379f6671114610064575b600080fd5b61004e61004936600461053e565b610085565b60405161005b91906105e1565b60405180910390f35b6100776100723660046106f3565b6102af565b60405190815260200161005b565b604080516101008101825260008082526020820181905291810182905260608082018390526080820183905260a0820181905260c082015260e081019190915260008281526020818152604091829020825161010081018452815481526001808301546001600160a01b0390811694830194909452600283015493841694820194909452600160a01b830463ffffffff1660608201529290916080840191600160c01b90910460ff169081111561013e5761013e610557565b600181111561014f5761014f610557565b8152602001600382018054610163906107ad565b80601f016020809104026020016040519081016040528092919081815260200182805461018f906107ad565b80156101dc5780601f106101b1576101008083540402835291602001916101dc565b820191906000526020600020905b8154815290600101906020018083116101bf57829003601f168201915b505050505081526020016004820180546101f5906107ad565b80601f0160208091040260200160405190810160405280929190818152602001828054610221906107ad565b801561026e5780601f106102435761010080835404028352916020019161026e565b820191906000526020600020905b81548152906001019060200180831161025157829003601f168201915b5050509183525050600582015460209091019060ff16600281111561029557610295610557565b60028111156102a6576102a6610557565b90525092915050565b6000806040518061010001604052806000801b81526020018a6001600160a01b03168152602001336001600160a01b031681526020018963ffffffff16815260200188600181111561030357610303610557565b815260200187878080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250505090825250604080516020601f880181900481028201810190925286815291810191908790879081908401838280828437600092018290525093855250506020909201915090529050600061039082610504565b600081815260208190526040902054909150156103c05760405163119b4fd360e11b815260040160405180910390fd5b808252600081815260208181526040918290208451815590840151600180830180546001600160a01b039384166001600160a01b031990911617905592850151600283018054606088015163ffffffff16600160a01b026001600160c01b03199091169290931691909117919091178082556080860151869490929160ff60c01b191690600160c01b90849081111561045b5761045b610557565b021790555060a08201516003820190610474908261084c565b5060c08201516004820190610489908261084c565b5060e082015160058201805460ff191660018360028111156104ad576104ad610557565b0217905550905050336001600160a01b0316817fef03cce331af387f11f3c3279c38f8f7029f5f13a001b6fea3d59f81767d235e846040516104ef91906105e1565b60405180910390a39998505050505050505050565b60008160c001518260a0015160405160200161052192919061090b565b604051602081830303815290604052805190602001209050919050565b60006020828403121561055057600080fd5b5035919050565b634e487b7160e01b600052602160045260246000fd5b6002811061057d5761057d610557565b9052565b60005b8381101561059c578181015183820152602001610584565b50506000910152565b600081518084526105bd816020860160208601610581565b601f01601f19169290920160200192915050565b6003811061057d5761057d610557565b602081528151602082015260018060a01b0360208301511660408201526000604083015161061a60608401826001600160a01b03169052565b50606083015163ffffffff8116608084015250608083015161063f60a084018261056d565b5060a08301516101008060c085015261065c6101208501836105a5565b915060c0850151601f198584030160e086015261067983826105a5565b92505060e085015161068d828601826105d1565b5090949350505050565b8035600281106106a657600080fd5b919050565b60008083601f8401126106bd57600080fd5b5081356001600160401b038111156106d457600080fd5b6020830191508360208285010111156106ec57600080fd5b9250929050565b600080600080600080600060a0888a03121561070e57600080fd5b87356001600160a01b038116811461072557600080fd5b9650602088013563ffffffff8116811461073e57600080fd5b955061074c60408901610697565b945060608801356001600160401b038082111561076857600080fd5b6107748b838c016106ab565b909650945060808a013591508082111561078d57600080fd5b5061079a8a828b016106ab565b989b979a50959850939692959293505050565b600181811c908216806107c157607f821691505b6020821081036107e157634e487b7160e01b600052602260045260246000fd5b50919050565b634e487b7160e01b600052604160045260246000fd5b601f82111561084757600081815260208120601f850160051c810160208610156108245750805b601f850160051c820191505b8181101561084357828155600101610830565b5050505b505050565b81516001600160401b03811115610865576108656107e7565b6108798161087384546107ad565b846107fd565b602080601f8311600181146108ae57600084156108965750858301515b600019600386901b1c1916600185901b178555610843565b600085815260208120601f198616915b828110156108dd578886015182559484019460019091019084016108be565b50858210156108fb5787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b6000835161091d818460208801610581565b835190830190610931818360208801610581565b0194935050505056fea164736f6c6343000814000a",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80636bcdc30c1461003b57806379f6671114610064575b600080fd5b61004e61004936600461053e565b610085565b60405161005b91906105e1565b60405180910390f35b6100776100723660046106f3565b6102af565b60405190815260200161005b565b604080516101008101825260008082526020820181905291810182905260608082018390526080820183905260a0820181905260c082015260e081019190915260008281526020818152604091829020825161010081018452815481526001808301546001600160a01b0390811694830194909452600283015493841694820194909452600160a01b830463ffffffff1660608201529290916080840191600160c01b90910460ff169081111561013e5761013e610557565b600181111561014f5761014f610557565b8152602001600382018054610163906107ad565b80601f016020809104026020016040519081016040528092919081815260200182805461018f906107ad565b80156101dc5780601f106101b1576101008083540402835291602001916101dc565b820191906000526020600020905b8154815290600101906020018083116101bf57829003601f168201915b505050505081526020016004820180546101f5906107ad565b80601f0160208091040260200160405190810160405280929190818152602001828054610221906107ad565b801561026e5780601f106102435761010080835404028352916020019161026e565b820191906000526020600020905b81548152906001019060200180831161025157829003601f168201915b5050509183525050600582015460209091019060ff16600281111561029557610295610557565b60028111156102a6576102a6610557565b90525092915050565b6000806040518061010001604052806000801b81526020018a6001600160a01b03168152602001336001600160a01b031681526020018963ffffffff16815260200188600181111561030357610303610557565b815260200187878080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250505090825250604080516020601f880181900481028201810190925286815291810191908790879081908401838280828437600092018290525093855250506020909201915090529050600061039082610504565b600081815260208190526040902054909150156103c05760405163119b4fd360e11b815260040160405180910390fd5b808252600081815260208181526040918290208451815590840151600180830180546001600160a01b039384166001600160a01b031990911617905592850151600283018054606088015163ffffffff16600160a01b026001600160c01b03199091169290931691909117919091178082556080860151869490929160ff60c01b191690600160c01b90849081111561045b5761045b610557565b021790555060a08201516003820190610474908261084c565b5060c08201516004820190610489908261084c565b5060e082015160058201805460ff191660018360028111156104ad576104ad610557565b0217905550905050336001600160a01b0316817fef03cce331af387f11f3c3279c38f8f7029f5f13a001b6fea3d59f81767d235e846040516104ef91906105e1565b60405180910390a39998505050505050505050565b60008160c001518260a0015160405160200161052192919061090b565b604051602081830303815290604052805190602001209050919050565b60006020828403121561055057600080fd5b5035919050565b634e487b7160e01b600052602160045260246000fd5b6002811061057d5761057d610557565b9052565b60005b8381101561059c578181015183820152602001610584565b50506000910152565b600081518084526105bd816020860160208601610581565b601f01601f19169290920160200192915050565b6003811061057d5761057d610557565b602081528151602082015260018060a01b0360208301511660408201526000604083015161061a60608401826001600160a01b03169052565b50606083015163ffffffff8116608084015250608083015161063f60a084018261056d565b5060a08301516101008060c085015261065c6101208501836105a5565b915060c0850151601f198584030160e086015261067983826105a5565b92505060e085015161068d828601826105d1565b5090949350505050565b8035600281106106a657600080fd5b919050565b60008083601f8401126106bd57600080fd5b5081356001600160401b038111156106d457600080fd5b6020830191508360208285010111156106ec57600080fd5b9250929050565b600080600080600080600060a0888a03121561070e57600080fd5b87356001600160a01b038116811461072557600080fd5b9650602088013563ffffffff8116811461073e57600080fd5b955061074c60408901610697565b945060608801356001600160401b038082111561076857600080fd5b6107748b838c016106ab565b909650945060808a013591508082111561078d57600080fd5b5061079a8a828b016106ab565b989b979a50959850939692959293505050565b600181811c908216806107c157607f821691505b6020821081036107e157634e487b7160e01b600052602260045260246000fd5b50919050565b634e487b7160e01b600052604160045260246000fd5b601f82111561084757600081815260208120601f850160051c810160208610156108245750805b601f850160051c820191505b8181101561084357828155600101610830565b5050505b505050565b81516001600160401b03811115610865576108656107e7565b6108798161087384546107ad565b846107fd565b602080601f8311600181146108ae57600084156108965750858301515b600019600386901b1c1916600185901b178555610843565b600085815260208120601f198616915b828110156108dd578886015182559484019460019091019084016108be565b50858210156108fb5787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b6000835161091d818460208801610581565b835190830190610931818360208801610581565b0194935050505056fea164736f6c6343000814000a",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 16,
+        "contract": "contracts/ACIRegistry.sol:ACIRegistry",
+        "label": "_registry",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_bytes32,t_struct(ACIRecord)361_storage)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_enum(CostPer)337": {
+        "encoding": "inplace",
+        "label": "enum CostPer",
+        "numberOfBytes": "1"
+      },
+      "t_enum(Status)341": {
+        "encoding": "inplace",
+        "label": "enum Status",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_bytes32,t_struct(ACIRecord)361_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct ACIRecord)",
+        "numberOfBytes": "32",
+        "value": "t_struct(ACIRecord)361_storage"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(ACIRecord)361_storage": {
+        "encoding": "inplace",
+        "label": "struct ACIRecord",
+        "members": [
+          {
+            "astId": 344,
+            "contract": "contracts/ACIRegistry.sol:ACIRegistry",
+            "label": "uid",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bytes32"
+          },
+          {
+            "astId": 346,
+            "contract": "contracts/ACIRegistry.sol:ACIRegistry",
+            "label": "executor",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address"
+          },
+          {
+            "astId": 348,
+            "contract": "contracts/ACIRegistry.sol:ACIRegistry",
+            "label": "owner",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address"
+          },
+          {
+            "astId": 350,
+            "contract": "contracts/ACIRegistry.sol:ACIRegistry",
+            "label": "cost",
+            "offset": 20,
+            "slot": "2",
+            "type": "t_uint32"
+          },
+          {
+            "astId": 353,
+            "contract": "contracts/ACIRegistry.sol:ACIRegistry",
+            "label": "costPer",
+            "offset": 24,
+            "slot": "2",
+            "type": "t_enum(CostPer)337"
+          },
+          {
+            "astId": 355,
+            "contract": "contracts/ACIRegistry.sol:ACIRegistry",
+            "label": "metadataURI",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 357,
+            "contract": "contracts/ACIRegistry.sol:ACIRegistry",
+            "label": "apiurl",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 360,
+            "contract": "contracts/ACIRegistry.sol:ACIRegistry",
+            "label": "status",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_enum(Status)341"
+          }
+        ],
+        "numberOfBytes": "192"
+      },
+      "t_uint32": {
+        "encoding": "inplace",
+        "label": "uint32",
+        "numberOfBytes": "4"
+      }
+    }
+  }
+}

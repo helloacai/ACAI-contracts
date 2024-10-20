@@ -1,0 +1,14 @@
+{
+  "hardhat": {
+    "ACIRegistry": "0x815329fD0D9514C41dc84AB58A71Efc88f9DE565",
+    "ACS": "0xb86BD7CC1E54083a851Dd723b1Fb77Ff3aFf7FA7"
+  },
+  "polygonAmoy": {
+    "ACIRegistry": "0xE9FE2bF68D8C6812BEb8A8019143c1ba8281893b",
+    "ACS": "0xBc0c75001dA750f02A56063c27F478352064831D"
+  },
+  "polygon": {
+    "ACIRegistry": "0x67d75De4eEA0b11B40fd0EdA5bDb2B95319Ce9e1",
+    "ACS": "0x5AFc57F7F6D6Dd560A87Ab073ebd09C8e4f4544a"
+  }
+}

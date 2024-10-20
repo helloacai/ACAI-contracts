@@ -1,0 +1,46 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/ACIRegistry.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.7;\n\nimport { IACIRegistry } from \"./IACIRegistry.sol\";\nimport {CostPer, ACIRecord, Status} from './IACIRegistry.sol';\n\ncontract ACIRegistry is IACIRegistry {\n    error AlreadyExists();\n\n    mapping(bytes32 uid => ACIRecord aciRecord) private _registry;\n\n\n    function register(\n        address executor,\n        uint32 cost,\n        CostPer costPer,\n        string calldata metadataURI,\n        string calldata apiurl\n    ) external returns (bytes32) {\n        ACIRecord memory aciRecord = ACIRecord({\n            uid: bytes32(0),\n            executor: executor,\n            owner: msg.sender,\n            cost: cost,\n            costPer: costPer,\n            metadataURI: metadataURI,\n            apiurl: apiurl,\n            status: Status.Active\n        });\n\n        bytes32 uid = _getUID(aciRecord);\n        if (_registry[uid].uid != bytes32(0)) {\n            revert AlreadyExists();\n        }\n\n        aciRecord.uid = uid;\n        _registry[uid] = aciRecord;\n\n        emit Registered(uid, msg.sender, aciRecord);\n\n        return uid;\n    }\n\n    function getACI(\n        bytes32 uid\n    ) external view returns (ACIRecord memory) {\n        return _registry[uid];\n    }\n\n    function _getUID(ACIRecord memory aciRecord) private pure returns (bytes32) {\n        return keccak256(abi.encodePacked(aciRecord.apiurl));\n    }\n}\n"
+    },
+    "contracts/ACS.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.7;\n\nimport { IACIRegistry } from \"./IACIRegistry.sol\";\nimport { IACS, Status, Thread } from './IACS.sol';\nimport { ACIRegistry } from \"./ACIRegistry.sol\";\n\ncontract ACS is IACS {\n    error InvalidRegistry();\n    error AlreadyExists();\n\n    // The global ACI registry.\n    IACIRegistry private immutable _aciRegistry;\n\n    mapping(bytes32 threadUID => Thread thread) private _threads;\n\n    bytes32 _defaultCoordinator;\n\n\n    constructor(IACIRegistry registry) {\n        if (address(registry) == address(0)) {\n            revert InvalidRegistry();\n        }\n\n        _aciRegistry = registry;\n    }\n\n    function openThread(\n        bytes32 coordinator,\n        address requester\n    ) external returns (bytes32) {\n\n        Thread memory thread = Thread({\n            threadUID: bytes32(0),\n            coordinator: coordinator == bytes32(0) ? _defaultCoordinator : coordinator,\n            requester: requester == address(0) ? msg.sender : requester,\n            totalBudget: 0,\n            remainingBudget: 0,\n            status: Status.Active\n        });\n\n        bytes32 threadUID = _getThreadUID(requester);\n        if(_threads[threadUID].threadUID != bytes32(0)) {\n            revert AlreadyExists();\n        }\n\n        thread.threadUID = threadUID;\n        _threads[threadUID] = thread;\n\n        emit NewThread(thread.threadUID, thread.coordinator, thread.requester);\n\n        return thread.threadUID;\n    }\n\n    function query(\n        bytes32 threadUID, \n        bytes32 aciUID, \n        string calldata request\n    ) external returns (bytes32) {\n        emit AgentRequested(aciUID, threadUID, bytes32(0), request);\n        return bytes32(0);\n    }\n\n    function getThread(\n        bytes32 threadUID\n    ) external view returns (Thread memory) {\n        return _threads[threadUID];\n    }\n\n    function _getThreadUID(address requester) private view returns (bytes32) {\n        return keccak256(abi.encodePacked(requester, block.number));\n    }\n}"
+    },
+    "contracts/IACIRegistry.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.7;\n\n/// @notice Enum representing the work upon which the total cost is calculated (ie. per Token, per Job, etc.)\nenum CostPer {\n    Token,\n    Job\n}\n\nenum Status {\n    Active,\n    Inactive,\n    Ignored\n}\n\n/// @notice A struct representing a registered ACI\nstruct ACIRecord {\n    bytes32 uid;\n    address executor;\n    address owner;\n    uint32 cost;\n    CostPer costPer;\n    string metadataURI;\n    string apiurl;\n    Status status;\n    \n}\n\ninterface IACIRegistry {\n    event Registered(bytes32 indexed uid, address indexed executor, ACIRecord aci);\n\n    function register(\n        address executor,\n        uint32 cost,\n        CostPer costPer,\n        string calldata metadataURI,\n        string calldata apiurl\n    ) external returns (bytes32);\n\n    function getACI(bytes32 uid) external view returns (ACIRecord memory);\n}\n"
+    },
+    "contracts/IACS.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.7;\n\nenum Status {\n    Active,\n    Closed,\n    Reviewed\n}\n\n/// @notice A struct representing a thread\nstruct Thread {\n    bytes32 threadUID;\n    bytes32 coordinator;\n    address requester;\n    uint32 totalBudget;\n    uint32 remainingBudget;\n    Status status;\n}\n\ninterface IACS {\n    event AgentRequested(bytes32 indexed uid, bytes32 indexed threadUID, bytes32 indexed subthreadUID, string request);\n    event NewThread(bytes32 indexed threadUID, bytes32 indexed coordinator, address indexed requester);\n    event ThreadFunded(bytes32 indexed threadUID, uint32 fundingAmount, address funder);\n\n    function query(bytes32 threadUID, bytes32 aciUID, string calldata request) external returns (bytes32);\n\n    function getThread(bytes32 threadUID) external returns (Thread memory);\n}\n"
+    }
+  },
+  "settings": {
+    "metadata": {
+      "bytecodeHash": "none",
+      "useLiteralContent": true
+    },
+    "optimizer": {
+      "enabled": true,
+      "runs": 1
+    },
+    "evmVersion": "paris",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    }
+  }
+}
